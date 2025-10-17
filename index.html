@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Para ti por que te quiero mucho</title>
+  <meta name="description" content="para el amor de mi vida por que cada vez que te veo siento pinchazos en el corazon y tripa de amor" />
+  <meta name="theme-color" content="#8b5cf6" />
+  <style>
+    :root{
+      --bg:#0b0b11;        /* Fondo principal */
+      --bg-soft:#121220;   /* Fondo tarjetas */
+      --txt:#f6f7fb;       /* Texto principal */
+      --muted:#b7b9c9;     /* Texto secundario */
+      --pri:#8b5cf6;       /* Color primario */
+      --pri-2:#22d3ee;     /* Color acento */
+      --ring: 0 0 0 3px rgba(139,92,246,.25);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color:var(--txt); background:radial-gradient(1200px 700px at 10% -20%,rgba(139,92,246,.20),transparent),
+                         radial-gradient(900px 600px at 110% 20%,rgba(34,211,238,.15),transparent),
+                         var(--bg);
+      line-height:1.65;
+    }
+    a{color:inherit}
+    .container{max-width:980px; margin-inline:auto; padding:24px}
+    header{
+      position:sticky; top:0; backdrop-filter:saturate(160%) blur(8px);
+      background:linear-gradient(180deg, rgba(11,11,17,.75), rgba(11,11,17,.35));
+      border-bottom:1px solid rgba(255,255,255,.06);
+      z-index:40
+    }
+    .nav{display:flex; align-items:center; gap:16px; justify-content:space-between;}
+    .brand{display:flex; align-items:center; gap:12px; font-weight:700; letter-spacing:.4px}
+    .logo{display:grid; place-items:center; width:36px; height:36px; border-radius:12px; background:linear-gradient(135deg,var(--pri),var(--pri-2));
+          box-shadow:0 10px 30px rgba(139,92,246,.35), inset 0 0 24px rgba(255,255,255,.08)}
+    .pill{padding:8px 14px; border:1px solid rgba(255,255,255,.12); border-radius:999px; font-size:14px; color:var(--muted)}
+    .btn{
+      appearance:none; border:0; border-radius:14px; padding:12px 18px; font-weight:700; cursor:pointer;
+      background:linear-gradient(135deg,var(--pri),var(--pri-2)); color:white; box-shadow:0 10px 30px rgba(139,92,246,.35);
+      transition: transform .15s ease, box-shadow .2s ease;
+    }
+    .btn:hover{transform:translateY(-1px)}
+    .btn:focus{outline:none; box-shadow: var(--ring)}
+    .hero{padding:72px 0 12px}
+    .eyebrow{display:inline-block; padding:6px 10px; border:1px solid rgba(255,255,255,.12); color:var(--muted); border-radius:999px; font-size:14px}
+    .title{font-size:clamp(36px, 5vw, 60px); line-height:1.06; margin:14px 0 8px; font-weight:900}
+    .subtitle{color:var(--muted); font-size:18px}
+
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      border:1px solid rgba(255,255,255,.08); border-radius:24px; padding:28px; box-shadow:0 10px 30px rgba(0,0,0,.35);
+    }
+    .grid{display:grid; gap:18px}
+    @media(min-width:840px){.grid{grid-template-columns: 1.3fr .7fr}}
+
+    .letter{font-size:18px}
+    .letter p{margin:0 0 16px}
+    .letter p:first-child::first-letter{float:left; font-size:58px; line-height:.9; padding-right:8px; color:var(--pri); font-weight:800}
+
+    .taglist{display:flex; flex-wrap:wrap; gap:10px}
+    .tag{padding:8px 12px; border-radius:999px; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.08); font-size:14px}
+
+    .panel{display:flex; flex-direction:column; gap:16px}
+    .field{display:flex; align-items:center; gap:10px; justify-content:space-between; padding:12px; border:1px dashed rgba(255,255,255,.12); border-radius:12px}
+    .field code{font-size:13px; color:var(--muted)}
+
+    .floating{
+      position:fixed; right:22px; bottom:22px; display:flex; flex-direction:column; gap:10px; z-index:50
+    }
+    .floating .btn{padding:14px 16px; border-radius:999px}
+
+    footer{color:var(--muted); padding:36px 0 60px; text-align:center}
+    .quote{font-size:16px; color:#e9ecff; opacity:.9; border-left:3px solid var(--pri); padding-left:12px}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo">❤︎</div>
+        <div>Para <span id="toName">Jennifer</span></div>
+      </div>
+      <div class="pill" id="date"></div>
+    </div>
+  </header>
+
+  <main class="container hero">
+    <div class="eyebrow" id="eyebrow">Carta para el amor de mi vida:</div>
+    <h1 class="title" id="headline">No te puedes imaginar el tiempo que hace que quiero hablarte lo unico que el amor me hace estar callado y eso me pasa por eso te he creado desde cero esta pagina web</h1>
+    <p class="subtitle" id="sub">He reunido aquí todo aquello que a veces me falta valor para decir con la voz.</p>
+
+    <div class="grid" style="margin-top:28px">
+      <section class="card letter" id="letter">
+        <!-- El texto de la carta se inyecta desde el BLOQUE EDITABLE ↓ -->
+      </section>
+
+      <aside class="panel">
+        <div class="card">
+          <h3 style="margin:0 0 12px">Momentos y promesas</h3>
+          <div class="taglist" id="chips"></div>
+        </div>
+          <p class="quote" id="quote"></p>
+        </div>
+        <div class="card field">
+          <div>
+            <div style="font-weight:700">copiar la frase</div>
+          </div>
+          <button class="btn" id="copyBtn" title="Copiar carta">Copiar</button>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <div class="floating">
+    <button class="btn" id="themeBtn" title="Cambiar color">⚙︎ Cambiar Tema</button>
+  </div>
+
+  <footer>
+    Hecha con ❤ por <span id="fromName">(tu nombre)</span> · <span style="opacity:.8">Esta página ahora es tuya</span>
+  </footer>
+
+  <!-- ===================== SOLO EDITA AQUÍ ===================== -->
+  <script>
+    // Cambia estos textos y listo. No toques nada más del archivo.
+    const CONTENT = {
+      toName: "Jennifer",
+      fromName: "Mateo",
+      eyebrow: "Carta desde mi corazón",
+      headline: "Lo que siento por ti",
+      sub: "aunque no lo creas esto es solo una pequeñisima parte de un resumen de por que siento esto por ti",
+      // Escribe tu carta como párrafos dentro de este array.
+      // Cada string será un párrafo.
+      letter: [
+        "Desde que te vi supe que eras la chica mas especial que podia haber conocido, basicamente por que se te veia en la cara que eras la mejor chica del mundo.",
+        "Se que nunca podriamos estar juntos por que soy muy feo, muy antipatico, y muy insensible.",
+        "Y por mil cosas mas, pero que sepas que lo que dicen todos los profesores en clase de que cuando me voy a apuntar al gym es por que queria que me vieras fuerte y guapo, no como ahora.",
+        "Por que tu me motivas a ir al gym y a lo que sea, sobre todo por que te quiero y a sido un flechazo. Te quiero desde el 3 de agosto del 2024 osea hace mas de un año.",
+        "Por eso si me tengo que romper las 2 piernas me las rompo con tal de estar contigo.",
+        "Pero si me dices que no lo entendere y te dejare en paz y ojala quedemos como amigos.",
+
+      ],
+      // Palabras o promesas cortas que aparecen como 'chips'
+      chips: [
+        "Paseos al atardecer",
+        "Fotos tontas",
+        "Flores sin motivo",
+        "Amor constantemente",
+        "lo que a ti te apetezca"
+      ],
+      // Opcional: esquema de color alternativo (elige uno de: "violeta" | "rosa" | "azul" | "verde")
+      theme: "violeta"
+    };
+  </script>
+  <!-- =================== FIN BLOQUE EDITABLE =================== -->
+
+  <script>
+    // ——— No modificar desde aquí ———
+    const $ = (sel)=>document.querySelector(sel);
+    const byId = (id)=>document.getElementById(id);
+
+    // Pinta fecha humana
+    const date = new Date();
+    byId('date').textContent = date.toLocaleDateString('es-ES', { day:'2-digit', month:'long', year:'numeric' });
+
+    // Inyecta contenido
+    const applyContent = (C)=>{
+      byId('toName').textContent = C.toName;
+      byId('fromName').textContent = C.fromName;
+      byId('eyebrow').textContent = C.eyebrow;
+      byId('headline').textContent = C.headline;
+      byId('sub').textContent = C.sub;
+   
+      const letter = byId('letter');
+      letter.innerHTML = C.letter.map(p=>`<p>${escapeHtml(p)}</p>`).join('');
+      const chips = byId('chips');
+      chips.innerHTML = C.chips.map(t=>`<span class="tag">${escapeHtml(t)}</span>`).join('');
+      applyTheme(C.theme||'violeta');
+    };
+
+    // Tema
+    function applyTheme(name){
+      const themes = {
+        violeta: ['#8b5cf6','#22d3ee'],
+        rosa:    ['#ec4899','#f97316'],
+        azul:    ['#60a5fa','#22d3ee'],
+        verde:   ['#34d399','#22c55e']
+      };
+      const [p,a] = themes[name] || themes.violeta;
+      document.documentElement.style.setProperty('--pri', p);
+      document.documentElement.style.setProperty('--pri-2', a);
+    }
+
+    // Seguridad mínima para texto
+    function escapeHtml(str){
+      return String(str).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;');
+    }
+
+    // Copiar carta
+    byId('copyBtn').addEventListener('click',()=>{
+      const txt = CONTENT.letter.join('\n\n');
+      navigator.clipboard.writeText(txt).then(()=>{
+        toast('Carta copiada');
+        confetti();
+      });
+    });
+
+    // Cambiar tema al vuelo
+    const order = ['violeta','rosa','azul','verde'];
+    byId('themeBtn').addEventListener('click',()=>{
+      const i = order.indexOf(CONTENT.theme); const next = order[(i+1)%order.length];
+      CONTENT.theme = next; applyTheme(next); toast(`Tema: ${next}`); confetti(12);
+    });
+
+    // Mini toast
+    function toast(msg){
+      const el = document.createElement('div');
+      el.textContent = msg; el.style.cssText = `position:fixed;left:50%;bottom:90px;transform:translateX(-50%);padding:10px 14px;border:1px solid rgba(255,255,255,.12);background:rgba(20,20,35,.9);color:#fff;border-radius:12px;z-index:60`;
+      document.body.appendChild(el); setTimeout(()=>el.remove(), 1800);
+    }
+
+    // Confetti sencillo
+    function confetti(n=22){
+      for(let i=0;i<n;i++){
+        const s = document.createElement('span');
+        const x = Math.random()*100; const d = 900+Math.random()*800;
+        s.style.cssText = `position:fixed;left:${x}vw;top:-10px;width:6px;height:10px;border-radius:2px;background:linear-gradient(135deg,var(--pri),var(--pri-2));opacity:.95;transform:translateY(0);z-index:70;`;
+        document.body.appendChild(s);
+        s.animate([{transform:'translateY(0)'},{transform:'translateY(110vh)'}],{duration:d, easing:'cubic-bezier(.2,.8,.2,1)'}).onfinish=()=>s.remove();
+      }
+    }
+
+    // Inicializa
+    applyContent(CONTENT);
+  </script>
+</body>
+</html>
